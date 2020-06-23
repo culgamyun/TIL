@@ -1,0 +1,82 @@
+<html>
+<head>
+<title>ex11.html</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #e8bf6a;}
+.s1 { color: #bababa;}
+.s2 { color: #a9b7c6;}
+.s3 { color: #a5c261;}
+.s4 { color: #a9b7c6;}
+.s5 { color: #cc7832;}
+.s6 { color: #6a8759;}
+.s7 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+ex11.html</font>
+</center></td></tr></table>
+<pre><span class="s0">&lt;!DOCTYPE </span><span class="s1">html</span><span class="s0">&gt;</span>
+<span class="s0">&lt;html </span><span class="s1">lang</span><span class="s3">=&quot;en&quot;</span><span class="s0">&gt;</span>
+<span class="s0">&lt;head&gt;</span>
+    <span class="s0">&lt;meta </span><span class="s1">charset</span><span class="s3">=&quot;UTF-8&quot;</span><span class="s0">&gt;</span>
+    <span class="s0">&lt;title&gt;</span><span class="s4">WEB</span><span class="s0">&lt;/title&gt;</span>
+    <span class="s0">&lt;script&gt;</span>
+
+
+        <span class="s5">var </span><span class="s2">Links ={</span>
+            <span class="s2">setColor:</span><span class="s5">function</span><span class="s4">(color){</span>
+                <span class="s5">var </span><span class="s2">alist = document.querySelectorAll(</span><span class="s6">'a'</span><span class="s4">)</span><span class="s5">;</span>
+                <span class="s5">var </span><span class="s2">i = </span><span class="s7">0</span><span class="s5">;</span>
+                <span class="s5">while</span><span class="s4">(i &lt; alist.length){</span>
+                    <span class="s2">alist[i].style.color = color</span><span class="s5">;</span>
+                    <span class="s2">i = i + </span><span class="s7">1</span><span class="s5">;</span>
+                <span class="s4">}</span>
+            <span class="s4">}</span>
+        <span class="s4">}</span>
+<span class="s5">var </span><span class="s2">Body = {</span>
+            <span class="s2">setColor:</span><span class="s5">function</span><span class="s4">(color){</span>
+                <span class="s2">document.querySelector(</span><span class="s6">'body'</span><span class="s4">).style.color = color</span><span class="s5">;</span>
+            <span class="s4">}</span><span class="s5">,</span>
+            <span class="s2">setBackgroundColor:</span><span class="s5">function</span><span class="s4">(color){</span>
+                <span class="s2">document.querySelector(</span><span class="s6">'body'</span><span class="s4">).style.backgroundColor = color</span><span class="s5">;</span>
+            <span class="s4">}</span>
+
+<span class="s4">}</span>
+        <span class="s5">function </span><span class="s2">nightDayHandler(self){</span>
+            <span class="s5">var </span><span class="s2">target = document.querySelector(</span><span class="s6">'body'</span><span class="s4">)</span><span class="s5">;</span>
+            <span class="s5">if</span><span class="s4">(self.value === </span><span class="s6">'night'</span><span class="s4">){</span>
+                <span class="s2">Body.setBackgroundColor(</span><span class="s6">'black'</span><span class="s4">)</span><span class="s5">;</span>
+                <span class="s2">Body.setColor(</span><span class="s6">'white'</span><span class="s4">)</span><span class="s5">;</span>
+                <span class="s2">self.value = </span><span class="s6">'day'</span><span class="s5">;</span>
+                <span class="s2">Links.setColor(</span><span class="s6">'powderblue'</span><span class="s4">)</span><span class="s5">;</span>
+            <span class="s4">} </span><span class="s5">else </span><span class="s4">{</span>
+                <span class="s2">Body.setBackgroundColor(</span><span class="s6">'white'</span><span class="s4">)</span><span class="s5">;</span>
+                <span class="s2">Body.setColor(</span><span class="s6">'black'</span><span class="s4">)</span><span class="s5">;</span>
+                <span class="s2">self.value = </span><span class="s6">'night'</span><span class="s5">;</span>
+                <span class="s2">Links.setColor(</span><span class="s6">'blue'</span><span class="s4">)</span><span class="s5">;</span>
+            <span class="s4">}</span>
+        <span class="s4">}</span>
+    <span class="s0">&lt;/script&gt;</span>
+<span class="s0">&lt;/head&gt;</span>
+<span class="s0">&lt;body&gt;</span>
+<span class="s0">&lt;h1&gt;&lt;a </span><span class="s1">href</span><span class="s3">=&quot;index.html&quot;</span><span class="s0">&gt;</span><span class="s4">WEB</span><span class="s0">&lt;/a&gt;&lt;/h1&gt;</span>
+<span class="s0">&lt;input </span><span class="s1">id</span><span class="s3">=&quot;night_day&quot; </span><span class="s1">type</span><span class="s3">=&quot;button&quot; </span><span class="s1">value</span><span class="s3">=&quot;night&quot; </span><span class="s1">onclick</span><span class="s3">=&quot;</span>
+    <span class="s2">nightDayHandler(</span><span class="s5">this</span><span class="s4">)</span><span class="s5">;</span>
+  <span class="s3">&quot;</span><span class="s0">&gt;</span>
+<span class="s0">&lt;ol&gt;</span>
+    <span class="s0">&lt;li&gt;&lt;a </span><span class="s1">href</span><span class="s3">=&quot;1.html&quot;</span><span class="s0">&gt;</span><span class="s4">HTML</span><span class="s0">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="s0">&lt;li&gt;&lt;a </span><span class="s1">href</span><span class="s3">=&quot;2.html&quot;</span><span class="s0">&gt;</span><span class="s4">CSS</span><span class="s0">&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="s0">&lt;li&gt;&lt;a </span><span class="s1">href</span><span class="s3">=&quot;3.html&quot;</span><span class="s0">&gt;</span><span class="s4">JavaScript</span><span class="s0">&lt;/a&gt;&lt;/li&gt;</span>
+<span class="s0">&lt;/ol&gt;</span>
+<span class="s0">&lt;h2&gt;</span><span class="s4">JavaScript</span><span class="s0">&lt;/h2&gt;</span>
+<span class="s0">&lt;p&gt;</span>
+    <span class="s4">JavaScript (/ˈdʒɑːvəˌskrɪpt/[6]), often abbreviated as JS, is a high-level, dynamic, weakly typed, prototype-based, multi-paradigm, and interpreted programming language. Alongside HTML and CSS, JavaScript is one of the three core technologies of World Wide Web content production. It is used to make webpages interactive and provide online programs, including video games. The majority of websites employ it, and all modern web browsers support it without the need for plug-ins by means of a built-in JavaScript engine. Each of the many JavaScript engines represent a different implementation of JavaScript, all based on the ECMAScript specification, with some engines not supporting the spec fully, and with many engines supporting additional features beyond ECMA.</span>
+<span class="s0">&lt;/p&gt;</span>
+<span class="s0">&lt;/body&gt;</span>
+<span class="s0">&lt;/html&gt;</span></pre>
+</body>
+</html>
