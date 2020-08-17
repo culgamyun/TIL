@@ -1,0 +1,31 @@
+package com.kh.op.test;
+
+import java.util.Scanner;
+
+public class I_MyOperator {
+
+	public void testMyMethod() {
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Name : ");
+		String name = sc.nextLine();
+		
+
+		System.out.print("Hot? (y/n) : ");
+		char yn=sc.next().charAt(0);
+		String hotice = (yn=='y')? "Hot" : "Ice";
+		
+		
+	    System.out.print("Sweet? (y/n) : ");
+	    char yn2=sc.next().charAt(0);
+		String sweetbitter = (yn2=='y')? "Chocolatte" : "Americano";
+	    
+	    System.out.print("Size? : ");
+		String size = sc.next();
+	    
+		System.out.print("How much money do you have?");	
+		   int money = sc.nextInt();
+		String brand = (money>5000)? "Starbucks" : 
+			                    ((money>=3000)? "Twosomeplace" : "Bbaekdabang"); 
+	    System.out.println("I recommend " + name + " a "+size+" sized " +brand + " " + hotice + " "+ sweetbitter + "."  );
+	   
